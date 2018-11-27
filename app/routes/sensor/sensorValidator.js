@@ -1,3 +1,4 @@
+
 const validateSensor = async (req) => {
     //TODO Add proper validation and database check
     if (!req.body.sensor_id) {

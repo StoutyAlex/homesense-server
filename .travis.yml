@@ -3,5 +3,4 @@ before_install:
 
 language: node_js
 node_js:
-  - "iojs"
   - "10.11.0"

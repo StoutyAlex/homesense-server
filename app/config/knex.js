@@ -1,17 +1,21 @@
 const path = require('path');
-const config = require('./loader').load();
 
 module.exports = {
-  client: 'sqlite',
+  client: 'sqlite3',
   connection: {
     // host: config.db.host,
     // user: config.db.username,
     // password: config.db.password || process.env.DB_PASSWORD,
-    host: '127.0.0.1',
-    user: 'root',
-    password: '',
-    database: "database.sqlite",
+    filename: "../../database.sqlite",
     timezone: 'UTC',
     charset: 'utf8mb4',
+  },
+  useNullAsDefault: true,
+  migrations: {
+    directory: path.join(__dirname, 'app', '../../migrations'),
+    tableName: 'knex_migrations',
+  },
+  seeds: {
+    directory: path.join(__dirname, 'app', '../../seeds'),
   }
 };

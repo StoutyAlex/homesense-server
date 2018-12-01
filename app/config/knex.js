@@ -1,12 +1,13 @@
 const path = require('path');
+const dbPath = path.resolve(__dirname, '../../database.sqlite');
 
 module.exports = {
   client: 'sqlite3',
   connection: {
     // host: config.db.host,
-    // user: config.db.username,
-    // password: config.db.password || process.env.DB_PASSWORD,
-    filename: "../../database.sqlite",
+    user: 'root',
+    password: "",
+    filename: dbPath,
     timezone: 'UTC',
     charset: 'utf8mb4',
   },
